@@ -1,5 +1,12 @@
 body {
 	font-family: roboto;
+	/*
+		Burada kullanılan roboto fontunun builtin olmadığı
+		bilgisayar veya cihazlarda time news roman fontu görünecek
+
+		Google fonts'u araştırırsan ve sayfana nasıl font ekleneceğini
+		incelersen iyi olabilir.
+	*/
 	background-color: #f1f1f1;
 }
 
@@ -14,8 +21,13 @@ ol {
 }
 
 .profile-case-head {
-	
+
 	width: 30%;
+	/* Burada zoom yaptığında resmin kaymasının nedeni
+		 width olarak % vermiş olman, eğer kullanıcının
+		 zoom yaptığında arayüzün bozulmasını istemiyorsan
+		 bunun statik bir piksel boyutu olması lazım
+	*/
 	height: 600px;
 	background-color: #000000;
 	margin: auto;
@@ -33,10 +45,42 @@ ol {
 }
 
 .profile-photo {
-	width: 250px;
-	height: 250px;
-	margin-left: 150px;
+	/*
+
+		width: 250px;
+		height: 250px;
+
+		Kare olduğunu bildiğin bir resim için hem width hem
+		height özelliği vermen gerekmiyor, zaten otomatik olarak
+		width veya height değeri birbirine eşitleyecektir.
+
+		Eğer kullandığım resim kare değilse de zaten bildiğin gibi
+		strech edililip kötü bir görünüm oluşturacaktır.
+	*/
+
+	width: 50%;
+	/*
+		istediğin efekti yerine getirmek için resmini bir kare resim
+		ile değiştirdim, ve genişlik olarak % değer verdim. Bu sayede
+		zoom yaptığında da resmin pozisyonu benzer oranda değişecek.
+	*/
+
+	/*
+		margin-left: 150px;
+		burada margin-left değerini de % olarak verebilirsin.
+	*/
+	margin-left: 60%;
+
+	/*
+		istediğin
+	*/
+
 	margin-top: 50px;
 	border-radius: 300px;
+	/*
+		Burada border radius için, kare bir elementi tamamen
+		circle haline getirmek istiyorsan ve boyutu değişken olabileceğini
+		düşünüyorsan border-radius: 100% verebilirsin.
+	*/
 	object-fit: cover;
 }
